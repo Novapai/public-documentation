@@ -1,0 +1,1104 @@
+{
+	"info": {
+		"_postman_id": "ef9cff71-f606-40f1-b0c9-b58fde4fd2a7",
+		"name": "NovaPay",
+		"description": "Documentation can be found at [https://novapai.github.io/documentation/](https://novapai.github.io/documentation/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21165780",
+		"_collection_link": ""
+	},
+	"item": [
+		{
+			"name": "Create Payout Samples",
+			"item": [
+				{
+					"name": "Create PayOut - Creditcard",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"Creditcard\",\r\n    \"description\": \"payout description\",\r\n    \"merchantData\": \"mydata\",\r\n    \"customerDetails\":    {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"AT\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 11\",\r\n        \"postalCode\": \"11000\",\r\n        \"dateOfBirth\": \"1990-07-31T00:00:00Z\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"account\": {\r\n        \"identifier\": \"545454HKWHED5454\",\r\n        \"displayName\": \"545454xxxxxx5454\",\r\n        \"holderName\": \"John Doe\",\r\n        \"cardExpiry\": {\r\n            \"month\": 3,\r\n            \"year\": 2030\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payouts",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payouts"
+							]
+						},
+						"description": "Integration manual: [https://novapai.github.io/documentation/transactions/payouts/](https://novapai.github.io/documentation/transactions/payouts/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayOut - Creditcard Adyen",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"Creditcard\",\r\n    \"paymentProcessor\":\"Adyencreditcard\",\r\n    \"description\": \"payout description\",\r\n    \"merchantData\": \"mydata\",\r\n    \"customerDetails\":    {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"AT\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 11\",\r\n        \"postalCode\": \"11000\",\r\n        \"dateOfBirth\": \"1990-07-31T00:00:00Z\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"account\": {\r\n        \"identifier\": \"545454HKWHED5454\",\r\n        \"displayName\": \"545454xxxxxx5454\",\r\n        \"holderName\": \"John Doe\",\r\n        \"cardExpiry\": {\r\n            \"month\": 3,\r\n            \"year\": 2030\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payouts",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payouts"
+							]
+						},
+						"description": "Integration manual: [https://novapai.github.io/documentation/transactions/payouts/](https://novapai.github.io/documentation/transactions/payouts/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayOut - Creditcard Nuvei",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"Creditcard\",\r\n    \"paymentProcessor\":\"nuveicreditcard\",\r\n    \"description\": \"payout description\",\r\n    \"merchantData\": \"mydata\",\r\n    \"customerDetails\":    {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"AT\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 11\",\r\n        \"postalCode\": \"11000\",\r\n        \"dateOfBirth\": \"1990-07-31T00:00:00Z\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"account\": {\r\n        \"identifier\": \"400002UYWJHC0961\",\r\n        \"displayName\": \"400002xxxxxx0961\",\r\n        \"holderName\": \"John Doe\",\r\n        \"cardExpiry\": {\r\n            \"month\": 5,\r\n            \"year\": 2026\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payouts",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payouts"
+							]
+						},
+						"description": "Integration manual: [https://novapai.github.io/documentation/transactions/payouts/](https://novapai.github.io/documentation/transactions/payouts/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayOut - Creditcard Paysafe",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"Creditcard\",\r\n    \"paymentProcessor\":\"paysafecreditcard\",\r\n    \"description\": \"payout description\",\r\n    \"merchantData\": \"mydata\",\r\n    \"customerDetails\":    {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"AT\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 11\",\r\n        \"postalCode\": \"11000\",\r\n        \"dateOfBirth\": \"1990-07-31T00:00:00Z\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"account\": {\r\n        \"identifier\": \"222100LWGWHC7736\",\r\n        \"displayName\": \"222100xxxxxx7736\",\r\n        \"holderName\": \"John Doe\",\r\n        \"cardExpiry\": {\r\n            \"month\": 5,\r\n            \"year\": 2026\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payouts",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payouts"
+							]
+						},
+						"description": "Integration manual: [https://novapai.github.io/documentation/transactions/payouts/](https://novapai.github.io/documentation/transactions/payouts/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayOut - Skrill",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"skrill\",\r\n    \"description\": \"payout description\",\r\n    \"merchantData\": \"mydata\",\r\n        \"customerDetails\":    \r\n         {\"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"AT\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 11\",\r\n        \"postalCode\": \"11000\",\r\n        \"dateOfBirth\": \"1990-07-31T00:00:00Z\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"account\": {\r\n       \"identifier\":\"test-skrill-customer@greentube.com\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payouts",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payouts"
+							]
+						},
+						"description": "Integration manual: [https://novapai.github.io/documentation/transactions/payouts/](https://novapai.github.io/documentation/transactions/payouts/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayOut - SEPA",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"sepa\",\r\n    \"description\": \"payout description\",\r\n    \"merchantData\": \"mydata\",\r\n        \"customerDetails\":    \r\n         {\"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"AT\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 11\",\r\n        \"postalCode\": \"11000\",\r\n        \"dateOfBirth\": \"1990-07-31T00:00:00Z\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"account\": {\r\n       \"identifier\":\"FI3250004699350600\",\r\n       \"holderName\": \"First Last\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payouts",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payouts"
+							]
+						},
+						"description": "Integration manual: [https://novapai.github.io/documentation/transactions/payouts/](https://novapai.github.io/documentation/transactions/payouts/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayOut - SEPA Adyen",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"sepa\",\r\n    \"paymentProcessor\":\"adyensepapayout\",\r\n    \"description\": \"payout description\",\r\n    \"merchantData\": \"mydata\",\r\n        \"customerDetails\":    \r\n         {\"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"AT\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 11\",\r\n        \"postalCode\": \"11000\",\r\n        \"dateOfBirth\": \"1990-07-31T00:00:00Z\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"account\": {\r\n       \"identifier\":\"FI3250004699350600\",\r\n       \"holderName\": \"First Last\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payouts",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payouts"
+							]
+						},
+						"description": "Integration manual: [https://novapai.github.io/documentation/transactions/payouts/](https://novapai.github.io/documentation/transactions/payouts/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayOut - SEPA Nuvei",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"sepa\",\r\n    \"paymentProcessor\":\"nuveisepapayout\",\r\n    \"description\": \"payout description\",\r\n    \"merchantData\": \"mydata\",\r\n        \"customerDetails\":    \r\n         {\"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"AT\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 11\",\r\n        \"postalCode\": \"11000\",\r\n        \"dateOfBirth\": \"1990-07-31T00:00:00Z\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"account\": {\r\n       \"identifier\":\"FI3250004699350600\",\r\n       \"holderName\": \"First Last\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payouts",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payouts"
+							]
+						},
+						"description": "Integration manual: [https://novapai.github.io/documentation/transactions/payouts/](https://novapai.github.io/documentation/transactions/payouts/)"
+					},
+					"response": []
+				}
+			],
+			"description": "[https://novapai.github.io/documentation/transactions/payouts/]()"
+		},
+		{
+			"name": "Create Payin Samples",
+			"item": [
+				{
+					"name": "Create PayIn - EPS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1002,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"eps\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"UK\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 11\",\r\n        \"postalCode\": \"11000\",\r\n        \"dateOfBirth\": \"01.01.1995\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://google.com\",\r\n    \"backUrl\": \"https://return.com\",\r\n    \"styleUrl\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payins"
+							]
+						},
+						"description": "Link to integration manual:\n\n[https://novapai.github.io/documentation/transactions/payins/](https://novapai.github.io/documentation/transactions/payins/)\n\naaa"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayIn - Twint",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1002,\r\n    \"currency\": \"CHF\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"twint\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"JP\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 11\",\r\n        \"postalCode\": \"11000\",\r\n        \"dateOfBirth\": \"01.01.1995\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://google.com\",\r\n    \"backUrl\": \"https://return.com\",\r\n    \"styleUrl\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payins"
+							]
+						},
+						"description": "Adyen Twint"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayIn - Sofort",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1002,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"sofort\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"JP\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 11\",\r\n        \"postalCode\": \"11000\",\r\n        \"dateOfBirth\": \"01.01.1995\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://google.com\",\r\n    \"backUrl\": \"https://return.com\",\r\n    \"styleUrl\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payins"
+							]
+						},
+						"description": "Link to integration manual:\n\n[https://novapai.github.io/documentation/transactions/payins/](https://novapai.github.io/documentation/transactions/payins/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayIn - GiroPay",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1002,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"giro\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"JP\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 11\",\r\n        \"postalCode\": \"11000\",\r\n        \"dateOfBirth\": \"01.01.1995\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://google.com\",\r\n    \"backUrl\": \"https://return.com\",\r\n    \"styleUrl\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payins"
+							]
+						},
+						"description": "Link to integration manual:\n\n[https://novapai.github.io/documentation/transactions/payins/](https://novapai.github.io/documentation/transactions/payins/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayIn - Neteller",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"Neteller\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"at\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 10\",\r\n        \"postalCode\": \"1100\",\r\n        \"dateOfBirth\": \"01.01.1975\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://google.com\",\r\n    \"backUrl\": \"https://google.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payins"
+							]
+						},
+						"description": "Link to integration manual:\n\n[https://novapai.github.io/documentation/transactions/payins/](https://novapai.github.io/documentation/transactions/payins/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayIn - Neteller force accounts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"Neteller\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"at\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 10\",\r\n        \"postalCode\": \"1100\",\r\n        \"dateOfBirth\": \"01.01.1975\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://google.com\",\r\n    \"backUrl\": \"https://google.com\",\r\n    \"accountsInfo\": {\r\n        \"forceAccounts\": true,\r\n        \"accounts\": [\r\n            {\r\n                \"identifier\": \"neteller1@email.com\",\r\n                \"holderName\": \"John Test\"\r\n            },\r\n            {\r\n                \"identifier\": \"neteller2test@email.com\",\r\n                \"holderName\": \"First Last\"\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payins"
+							]
+						},
+						"description": "Link to integration manual:\n\n[https://novapai.github.io/documentation/transactions/payins/](https://novapai.github.io/documentation/transactions/payins/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayIn - Neteller suggest accounts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"Neteller\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"at\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 10\",\r\n        \"postalCode\": \"1100\",\r\n        \"dateOfBirth\": \"01.01.1975\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://google.com\",\r\n    \"backUrl\": \"https://google.com\",\r\n    \"accountsInfo\": {\r\n        \"forceAccounts\": false,\r\n        \"accounts\": [\r\n            {\r\n                \"identifier\": \"neteller1@email.com\",\r\n                \"holderName\": \"John Test\"\r\n            },\r\n            {\r\n                \"identifier\": \"neteller2test@email.com\",\r\n                \"holderName\": \"First Last\"\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payins"
+							]
+						},
+						"description": "Link to integration manual:\n\n[https://novapai.github.io/documentation/transactions/payins/](https://novapai.github.io/documentation/transactions/payins/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayIn - Paypal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"Paypal\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"at\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 10\",\r\n        \"postalCode\": \"1100\",\r\n        \"dateOfBirth\": \"01.01.1975\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://google.com\",\r\n    \"backUrl\": \"https://google.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payins"
+							]
+						},
+						"description": "Link to integration manual:\n\n[https://novapai.github.io/documentation/transactions/payins/](https://novapai.github.io/documentation/transactions/payins/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayIn - Bizum",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"bizum\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"at\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 10\",\r\n        \"postalCode\": \"1100\",\r\n        \"dateOfBirth\": \"01.01.1975\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://google.com\",\r\n    \"backUrl\": \"https://google.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payins"
+							]
+						},
+						"description": "Link to integration manual:\n\n[https://novapai.github.io/documentation/transactions/payins/](https://novapai.github.io/documentation/transactions/payins/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayIn - CreditCard",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 3000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"Creditcard\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"at\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 12\",\r\n        \"postalCode\": \"1100\",\r\n        \"dateOfBirth\": \"01.02.1975\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://google.com\",\r\n    \"backUrl\": \"https://return.com\",\r\n    \"styleUrl\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payins"
+							]
+						},
+						"description": "Link to integration manual:\n\n[https://novapai.github.io/documentation/transactions/payins/](https://novapai.github.io/documentation/transactions/payins/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayIn - CreditCard Allow debit only",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 3000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"Creditcard\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"at\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 10\",\r\n        \"postalCode\": \"1100\",\r\n        \"dateOfBirth\": \"01.02.1975\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://google.com\",\r\n    \"backUrl\": \"https://return.com\",\r\n    \"styleUrl\": \"\",\r\n    \"accountsInfo\": {\r\n        \"excludedCardTypes\": [\"credit\"]\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payins"
+							]
+						},
+						"description": "Link to integration manual:\n\n[https://novapai.github.io/documentation/transactions/payins/](https://novapai.github.io/documentation/transactions/payins/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayIn - CreditCard force cards",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 3000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"Creditcard\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"at\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 12\",\r\n        \"postalCode\": \"1100\",\r\n        \"dateOfBirth\": \"01.02.1975\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://google.com\",\r\n    \"backUrl\": \"https://return.com\",\r\n    \"styleUrl\": \"\",\r\n    \"accountsInfo\": {\r\n        \"forceAccounts\": true,\r\n        \"accounts\": [\r\n            {\r\n                \"identifier\": \"545454HKWHED5454\",\r\n                \"displayName\": \"545454xxxxxx5454\",\r\n                \"holderName\": \"First Last\",\r\n                \"cardExpiry\": {\r\n                    \"month\": 3,\r\n                    \"year\": 2030\r\n                }\r\n            },\r\n            {\r\n                \"identifier\": \"555544XYQYZX1111\",\r\n                \"displayName\": \"555544xxxxxx1111\",\r\n                \"holderName\": \"First Last\",\r\n                \"cardExpiry\": {\r\n                    \"month\": 3,\r\n                    \"year\": 2030\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payins"
+							]
+						},
+						"description": "Link to integration manual:\n\n[https://novapai.github.io/documentation/transactions/payins/](https://novapai.github.io/documentation/transactions/payins/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayIn - CreditCard suggest cards",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 3000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"Creditcard\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"at\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 12\",\r\n        \"postalCode\": \"1100\",\r\n        \"dateOfBirth\": \"01.02.1975\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://google.com\",\r\n    \"backUrl\": \"https://return.com\",\r\n    \"styleUrl\": \"\",\r\n    \"accountsInfo\": {\r\n        \"accounts\": [\r\n            {\r\n                \"identifier\": \"545454HKWHED5454\",\r\n                \"displayName\": \"545454xxxxxx5454\",\r\n                \"holderName\": \"First Last\",\r\n                \"cardExpiry\": {\r\n                    \"month\": 3,\r\n                    \"year\": 2030\r\n                }\r\n            },\r\n            {\r\n                \"identifier\": \"555544XYQYZX1111\",\r\n                \"displayName\": \"555544xxxxxx1111\",\r\n                \"holderName\": \"First Last\",\r\n                \"cardExpiry\": {\r\n                    \"month\": 3,\r\n                    \"year\": 2030\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payins"
+							]
+						},
+						"description": "Link to integration manual:\n\n[https://novapai.github.io/documentation/transactions/payins/](https://novapai.github.io/documentation/transactions/payins/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayIn - Paysafecard",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"Paysafecard\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"at\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 10\",\r\n        \"postalCode\": \"1100\",\r\n        \"dateOfBirth\": \"01.01.1975\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://google.com\",\r\n    \"backUrl\": \"https://google.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payins"
+							]
+						},
+						"description": "Link to integration manual:\n\n[https://novapai.github.io/documentation/transactions/payins/](https://novapai.github.io/documentation/transactions/payins/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayIn - Skrill",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1002,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"skrill\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"de\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 11\",\r\n        \"postalCode\": \"11000\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://return.com\",\r\n    \"backUrl\": \"https://return.com\",\r\n    \"styleUrl\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payins"
+							]
+						},
+						"description": "Link to integration manual:\n\n[https://novapai.github.io/documentation/transactions/payins/](https://novapai.github.io/documentation/transactions/payins/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayIn - Trustly",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1002,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"trustly\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"de\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 11\",\r\n        \"postalCode\": \"11000\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://return.com\",\r\n    \"backUrl\": \"https://return.com\",\r\n    \"styleUrl\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payins"
+							]
+						},
+						"description": "Link to integration manual:\n\n[https://novapai.github.io/documentation/transactions/payins/](https://novapai.github.io/documentation/transactions/payins/)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create PayIn - ApplePay",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1002,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"applepay\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"de\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 11\",\r\n        \"postalCode\": \"11000\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://return.com\",\r\n    \"backUrl\": \"https://return.com\",\r\n    \"styleUrl\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+							"host": [
+								"{{ServiceUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"payins"
+							]
+						},
+						"description": "Link to integration manual:\n\n[https://novapai.github.io/documentation/transactions/payins/](https://novapai.github.io/documentation/transactions/payins/)"
+					},
+					"response": []
+				}
+			],
+			"description": "[https://novapai.github.io/documentation/transactions/payins/]()",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Create PayIn",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 1000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"Neteller\",\r\n    \"description\": \"10EUR Deposit\",\r\n    \"merchantData\": \"myData\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"country\": \"at\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"street name 10\",\r\n        \"postalCode\": \"1100\",\r\n        \"dateOfBirth\": \"01.01.1975\",\r\n        \"ipAddress\": \"185.16.77.249\"\r\n    },\r\n    \"returnUrl\": \"https://google.com\",\r\n    \"backUrl\": \"https://google.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ServiceUrl}}/api/v1/transactions/payins",
+					"host": [
+						"{{ServiceUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						"payins"
+					]
+				},
+				"description": "Link to integration manual:\n\n[https://novapai.github.io/documentation/transactions/payins/](https://novapai.github.io/documentation/transactions/payins/)"
+			},
+			"response": []
+		},
+		{
+			"name": "Refund Transaction",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ServiceUrl}}/api/v1/transactions/00000/refund",
+					"host": [
+						"{{ServiceUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						"00000",
+						"refund"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create PayOut",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 1000,\r\n    \"currency\": \"EUR\",\r\n    \"merchantReferenceId\": \"{{$guid}}\",\r\n    \"paymentType\": \"creditcard\",\r\n    \"description\": \"payout description\",\r\n    \"merchantData\": \"mydata\",\r\n    \"customerDetails\": {\r\n        \"customerId\": \"customer-1\",\r\n        \"email\": \"customer@email.com\",\r\n        \"firstName\": \"first\",\r\n        \"lastName\": \"last\",\r\n        \"country\": \"AT\",\r\n        \"city\": \"Vienna\",\r\n        \"language\": \"en\",\r\n        \"address\": \"Wiednerhauptstrasse 94\",\r\n        \"postalCode\": \"1050\",\r\n        \"dateOfBirth\": \"07.31.1990\",\r\n        \"ipAddress\": \"186.247.166.127\"\r\n    },\r\n    \"account\": {\r\n        \"identifier\": \"545454HKWHED5454\",\r\n        \"displayName\": \"545454xxxxxx5454\",\r\n        \"holderName\": \"John Doe\",\r\n        \"cardExpiry\": {\r\n            \"month\": 3,\r\n            \"year\": 2030\r\n        }\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ServiceUrl}}/api/v1/transactions/payouts",
+					"host": [
+						"{{ServiceUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						"payouts"
+					]
+				},
+				"description": "Integration manual: [https://novapai.github.io/documentation/transactions/payouts/](https://novapai.github.io/documentation/transactions/payouts/)"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Transaction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ServiceUrl}}/api/v1/transactions/123456",
+					"host": [
+						"{{ServiceUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						"123456"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ServiceUrl}}/api/v1/transactions?fromDate=2023-02-10&toDate=2023-04-14 17:17:51.810&pagesize=100",
+					"host": [
+						"{{ServiceUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "fromDate",
+							"value": "2023-02-10"
+						},
+						{
+							"key": "toDate",
+							"value": "2023-04-14 17:17:51.810"
+						},
+						{
+							"key": "pagesize",
+							"value": "100"
+						},
+						{
+							"key": "nextPageToken",
+							"value": "null",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					" pm.request.addHeader({ key: 'Merchant-Id', value: pm.collectionVariables.get('Merchant-Id')})",
+					" pm.request.addHeader({ key: 'X-API-KEY', value: pm.collectionVariables.get('X-API-KEY')})"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ServiceUrl",
+			"value": "must be obtained from novapay",
+			"type": "string"
+		},
+		{
+			"key": "Merchant-Id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "X-API-KEY",
+			"value": "X",
+			"type": "string"
+		}
+	]
+}
